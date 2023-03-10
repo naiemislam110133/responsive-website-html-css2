@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    background-image: url("../images/cloud.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0,0,0,.6);
+    background-blend-mode: overlay;
+
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav{
+    height: 80px;
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#nav-toggler{
+    display: none;
+}
+.humburburg{
+    color: #fff;
+    font-size: 24px;
+    display: none;
+}
+
+.navigation{
+    display: flex;
+
+}
+.navigation li{
+    margin-right: 30px;
+
+}
+.navigation li a{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+}
+/* banner style */
+.banner{
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+/* akane akta bisoy lokko Rakthe hobe je flex direction jodi colum kora hoy tahole justify content upor niche kaj korbe and align item dane bame kaj korbe  */
+.banner-left{
+    display: flex;
+    flex-direction: column;             
+   justify-content: center;
+   align-items: flex-start;
+}
+.banner-left h1{
+font-size: 45px;
+color: #fff;
+line-height: 1;
+}
+
+.highlight{
+    color: #ff00be;
+}
+.banner-left p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+.primary-btn{
+    outline: 0;
+    border: 0;
+    padding: 15px 20px;
+    background-image: linear-gradient(#c21273, #ff00be);
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 7px 0 #6b0b53ea;
+    position: relative;
+    top: 0;
+}
+.banner-btn:active{
+    top: 5px;
+    box-shadow: 0 2px 0 #6b0b53ea;
+}
+.banner-right{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.banner-right img{
+    width: 100%;
+}
+/* Feature Styles */
+.section-title{
+    text-align: center;
+    margin: 30px 0;
+}
+.section-title h1{
+    font-size: 40px;
+    border-bottom: 2px solid #ff00be;
+    display: inline-block;
+   
+}
+.feature-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+}
+.card{
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 30px 35px rgba(0,0,0,.2);
+}
+.card .card-icon{
+    background-color: #ff00be;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card h3{
+    color: #ff00be;
+    font-size: 25px;
+}
+.card p{
+    margin: 10px 0;
+    line-height: 1.5;
+}
+/* gallery part css  */
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.photo img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ff00be;
+}
+
+/* Contact Part css */
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.contact-left img{
+width: 100%;
+}
+.contact form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input-field{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 18px;
+    font-family: inherit; 
+     /* inhert hosse defaul fontfamily remove korbe */
+}
+footer{
+    margin-top: 30px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Part Css */
+@media Only screen and (max-width: 950px) {
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+    .banner-left{
+        padding-left: 20px;
+    }
+    .banner-left h1{
+        font-size: 35px;
+    }
+}
+@media Only screen and (max-width: 800px) {
+    nav{
+        width: 80%;
+    }
+    .humburburg{
+        display: block;
+    }
+    .navigation{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        padding: 30px 0;
+        transform: translateY(-450px);
+        transition: .5s ease-in-out;
+    }
+    #nav-toggler:checked ~ .navigation{
+    transform: translateY(0);
+    }
+    .navigation li{
+        margin-bottom: 20px;
+    }
+    .banner{
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+    .banner-left{
+        order: 2;
+        padding: 50px;
+    }
+    .feature-card, .gallery, .contact{
+        grid-template-columns: 1fr
+    }
+    .photo{
+        text-align: center;
+    }
+    .gallery .photo img{
+        max-width: 380px;
+    }
+    .contact-left, .contact-right{
+        width: 75%;
+        margin: auto;
+    }
+}
